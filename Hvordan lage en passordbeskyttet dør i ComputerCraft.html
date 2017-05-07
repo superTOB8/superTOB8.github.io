@@ -1,3 +1,4 @@
+<html><head><meta name="author" content="Tobias"><html lang="no"><meta charset="UTF-9"><meta name="description" content="En side laget for å hjelpe andreb med ComputerCraft."><title>ComputerCraft: Hvordan lage en passordbeskyttet dør</title></head><body><h1>1: Bygg det du trenger</h1><p>Aller først må du bygge et hus. Det kan du gjøre ved å gå til<a href="http://oppgaver.kidsakoder.no/computercraft/bygg_et_hus/bygg_et_hus.html"> Kodeklubbens veilendning i ComputerCraft</a>, eller bare bygg et selv. Sett inn en dør med en datamaskin på høyre side.</p><h1>2: Passordet</h1><p>Åpne Datamaskinen</p><p>Lag et nytt program som du kaller <code>passord </code>og skriv følgene program:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'(Her skriver du passordet)'</span>
 
 <span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hva er passordet?'</span>)
@@ -9,7 +10,7 @@
         <span class="hljs-built_in">print</span> <span class="hljs-string">'Feil'</span>
     <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
-</code></pre><p>Test progrmmet. Fungerer det som du trodde?</p><p>Hvis du vil stoppe programmet mï¿½ du holde inne <em>Ctrl</em> og <em>T </em>samtidg i cirka ett sekund. Da avbrytes progrmmet, og teksten <code>Terminated</code> skrives pï¿½ skjermen. Dette fungerer i alle ComputerCraft-programmer.</p><h1>3: Dï¿½ren ï¿½pnes</h1><p>Du vil sikkert at dï¿½ren skal ï¿½pnes nï¿½r du skriver inn passordet. Da bruker vi  <strong>redstone</strong> til ï¿½ ï¿½pne dï¿½ren. Endre <code>passord </code>som fï¿½lger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
+</code></pre><p>Test progrmmet. Fungerer det som du trodde?</p><p>Hvis du vil stoppe programmet må du holde inne <em>Ctrl</em> og <em>T </em>samtidg i cirka ett sekund. Da avbrytes progrmmet, og teksten <code>Terminated</code> skrives på skjermen. Dette fungerer i alle ComputerCraft-programmer.</p><h1>3: Døren åpnes</h1><p>Du vil sikkert at døren skal åpnes når du skriver inn passordet. Da bruker vi  <strong>redstone</strong> til å åpne døren. Endre <code>passord </code>som følger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
 
 <span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
     <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hva er passordet?'</span>)
@@ -21,7 +22,7 @@
         redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">false</span>)     <span class="hljs-comment">-- endret linje</span>
     <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
-</code></pre><p>Kjï¿½r programmet. Fungerer det nï¿½ da?</p><h1>4: Siste finish</h1><p>Nï¿½ mï¿½ vi passe pï¿½ at det eneste som er pï¿½ skjermen er programmet. Det gjï¿½r vi ved ï¿½ hente to funksjoner fra <code>term</code> biblioteket som fï¿½lger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
+</code></pre><p>Kjør programmet. Fungerer det nå da?</p><h1>4: Siste finish</h1><p>Nå må vi passe på at det eneste som er på skjermen er programmet. Det gjør vi ved å hente to funksjoner fra <code>term</code> biblioteket som følger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
 
 <span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
     term.clear()                              <span class="hljs-comment">-- ny linje</span>
@@ -35,4 +36,4 @@
         redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">false</span>)
     <span class="hljs-keyword">end</span>
 <span class="hljs-keyword">end</span>
-</code></pre><p>Sï¿½ enkelt er det ï¿½ lage en passordbeskyttet dï¿½r i ComputerCraft.</p></body></html>
+</code></pre><p>Så enkelt er det å lage en passordbeskyttet dør i ComputerCraft.</p></body></html>
