@@ -1,0 +1,38 @@
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hva er passordet?'</span>)
+    svar = read()
+
+    <span class="hljs-keyword">if</span> svar == passord <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">print</span> <span class="hljs-string">'Riktig'</span>
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">print</span> <span class="hljs-string">'Feil'</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre><p>Test progrmmet. Fungerer det som du trodde?</p><p>Hvis du vil stoppe programmet m� du holde inne <em>Ctrl</em> og <em>T </em>samtidg i cirka ett sekund. Da avbrytes progrmmet, og teksten <code>Terminated</code> skrives p� skjermen. Dette fungerer i alle ComputerCraft-programmer.</p><h1>3: D�ren �pnes</h1><p>Du vil sikkert at d�ren skal �pnes n�r du skriver inn passordet. Da bruker vi  <strong>redstone</strong> til � �pne d�ren. Endre <code>passord </code>som f�lger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hva er passordet?'</span>)
+    svar = read()
+
+    <span class="hljs-keyword">if</span> svar == passord <span class="hljs-keyword">then</span>
+        redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">true</span>)      <span class="hljs-comment">-- endret linje</span>
+        sleep(<span class="hljs-number">5</span>)                              <span class="hljs-comment">-- endret linje</span>
+        redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">false</span>)     <span class="hljs-comment">-- endret linje</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre><p>Kj�r programmet. Fungerer det n� da?</p><h1>4: Siste finish</h1><p>N� m� vi passe p� at det eneste som er p� skjermen er programmet. Det gj�r vi ved � hente to funksjoner fra <code>term</code> biblioteket som f�lger:</p><pre><code class="lua"><span class="hljs-keyword">local</span> passord = <span class="hljs-string">'kodeklubben'</span>
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">true</span> <span class="hljs-keyword">do</span>
+    term.clear()                              <span class="hljs-comment">-- ny linje</span>
+    term.setCursorPos(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>)                   <span class="hljs-comment">-- ny linje</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Hva er passordet?'</span>)
+    svar = read(<span class="hljs-string">'*'</span>)                          <span class="hljs-comment">-- endret linje</span>
+
+    <span class="hljs-keyword">if</span> svar == passord <span class="hljs-keyword">then</span>
+        redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">true</span>)
+        sleep(<span class="hljs-number">5</span>)
+        redstone.setOutput(<span class="hljs-string">'left'</span>, <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre><p>S� enkelt er det � lage en passordbeskyttet d�r i ComputerCraft.</p></body></html>
